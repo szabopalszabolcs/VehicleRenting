@@ -1,14 +1,8 @@
 import java.text.SimpleDateFormat;
-import java.time.Year;
-import java.util.Date;
 
-/**
- * Created by Szabi on 26.07.2021.
- */
+class Person {
 
-public class Person {
-
-    public enum Gender{
+    enum Gender{
         MALE,
         FEMALE
     }
@@ -20,7 +14,7 @@ public class Person {
     private Gender gender;
     private int yearOfDrivingLicense;
 
-    public Person(int pid, String firstName, String lastName, SimpleDateFormat dateOfBirth, Gender gender, int yearOfDrivingLicense) {
+    Person(int pid, String firstName, String lastName, SimpleDateFormat dateOfBirth, Gender gender, int yearOfDrivingLicense) {
         this.pid = pid;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -29,27 +23,27 @@ public class Person {
         this.yearOfDrivingLicense = yearOfDrivingLicense;
     }
 
-    public int getPid() {
+    int getPid() {
         return pid;
     }
 
-    public String getFirstName() {
+    String getFirstName() {
         return firstName;
     }
 
-    public String getLastName() {
+    String getLastName() {
         return lastName;
     }
 
-    public SimpleDateFormat getDateOfBirth() {
+    SimpleDateFormat getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public Gender getGender() {
+    Gender getGender() {
         return gender;
     }
 
-    public int getYearOfDrivingLicense() { return yearOfDrivingLicense; }
+    int getYearOfDrivingLicense() { return yearOfDrivingLicense; }
 
     @Override
     public boolean equals(Object o) {
