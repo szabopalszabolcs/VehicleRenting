@@ -1,3 +1,4 @@
+import java.text.SimpleDateFormat;
 import java.time.Year;
 import java.util.Date;
 
@@ -15,11 +16,11 @@ public class Person {
     private int pid;
     private String firstName;
     private String lastName;
-    private Date dateOfBirth;
+    private SimpleDateFormat dateOfBirth;
     private Gender gender;
-    private Year yearOfDrivingLicense;
+    private int yearOfDrivingLicense;
 
-    public Person(int pid, String firstName, String lastName, Date dateOfBirth, Gender gender, Year yearOfDrivingLicense) {
+    public Person(int pid, String firstName, String lastName, SimpleDateFormat dateOfBirth, Gender gender, int yearOfDrivingLicense) {
         this.pid = pid;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -40,7 +41,7 @@ public class Person {
         return lastName;
     }
 
-    public Date getDateOfBirth() {
+    public SimpleDateFormat getDateOfBirth() {
         return dateOfBirth;
     }
 
@@ -48,9 +49,7 @@ public class Person {
         return gender;
     }
 
-    public Year getYearOfDrivingLicense() {
-        return yearOfDrivingLicense;
-    }
+    public int getYearOfDrivingLicense() { return yearOfDrivingLicense; }
 
     @Override
     public boolean equals(Object o) {
@@ -68,4 +67,12 @@ public class Person {
         return getPid();
     }
 
+    @Override
+    public String toString() {
+        return  ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                ", gender=" + gender +
+                ", yearOfDrivingLicense=" + yearOfDrivingLicense;
+    }
 }

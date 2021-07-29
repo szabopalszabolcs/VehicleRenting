@@ -1,11 +1,8 @@
-import java.time.Year;
 
-/**
- * Created by Szabi on 26.07.2021.
- */
-public class Vehicle {
 
-    public enum Type {
+class Vehicle {
+
+    enum Type {
         CITYCAR,
         FAMILY,
         EXECUTIVE,
@@ -16,11 +13,11 @@ public class Vehicle {
 
     private String regNumber;
     private Type type;
-    private Year manufacturingYear;
+    private int manufacturingYear;
     private String brand;
     private String colour;
 
-    public Vehicle(String regNumber, Type type, Year manufacturingYear, String brand, String colour) {
+    Vehicle(String regNumber, Type type, int manufacturingYear, String brand, String colour) {
         this.regNumber = regNumber;
         this.type = type;
         this.manufacturingYear = manufacturingYear;
@@ -28,23 +25,23 @@ public class Vehicle {
         this.colour = colour;
     }
 
-    public String getRegNumber() {
+    String getRegNumber() {
         return regNumber;
     }
 
-    public Type getType() {
+    Type getType() {
         return type;
     }
 
-    public Year getManufacturingYear() {
+    int getManufacturingYear() {
         return manufacturingYear;
     }
 
-    public String getBrand() {
+    String getBrand() {
         return brand;
     }
 
-    public String getColour() {
+    String getColour() {
         return colour;
     }
 
@@ -62,5 +59,14 @@ public class Vehicle {
     @Override
     public int hashCode() {
         return getRegNumber() != null ? getRegNumber().hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return  "regNumber='" + regNumber + '\'' +
+                ", type=" + type +
+                ", manufacturingYear=" + manufacturingYear +
+                ", brand='" + brand + '\'' +
+                ", colour='" + colour + '\'';
     }
 }
